@@ -144,7 +144,7 @@ def find_cars(img,ystart,ystop,cells_per_step,scale,svc,X_scale,cspace,orient,pi
     #Normalize pixel intensity
     img = img.astype(np.float32)/255
     #确定搜索车辆的区域
-    img_tosearch = img[ystart-52:ystop-15,700::]
+    img_tosearch = img[ystart-22:ystop-5,700::]
     #print(img_tosearch.shape)
     ctrans_tosearch = color_cvt(img_tosearch,cspace=cspace)
     if scale!=1:
@@ -251,7 +251,7 @@ def draw_labeled_bboxes(img,labels):
 sliding_window = {'scale':[0.6, 0.8, 1.2, 1.6, 2, 2.2], 
           'ystart':[400, 400, 400, 350, 350, 350], 
           'ystop': [520, 520, 620, 620, 656, 656], 
-          'cells_per_step': [3, 3, 2, 1, 1, 1]}
+          'cells_per_step': [3, 3, 1, 1, 1, 1]}
 
 
 
